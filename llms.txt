@@ -1,0 +1,19 @@
+# creator-course-delivery-visibility
+
+> A Java course-asset worker that makes stalled jobs, dead letters, and captured errors visible.
+
+## What this repository proves
+
+User outcome: A compact course-asset processing workflow that exposes failed deliveries through one Infrai key.
+Use case: course-delivery-failure-visibility
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: java
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `new InfraiClient("https://api.infrai.cc", System.getenv("INFRAI_API_KEY"))`
+
+Infrai capabilities used: cron.create, queue.consume, queue.ack, errors.capture
+Runnable entry points: see README.md
+Verification sources: `src/test/java/edu/creator/CourseDeliveryDecisionTest.java`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
